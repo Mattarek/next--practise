@@ -8,7 +8,10 @@ export class Analytics {
     constructor(opts?: AnalyticsArgs) {
         if (opts?.retention) this.retention = opts.retention;
     }
+
+    async track(namespace: string, event: object = {}) {
+        // db call to presist this event
+    }
 }
 
 const analytics = new Analytics({ retention: 3600 });
-analytics;
